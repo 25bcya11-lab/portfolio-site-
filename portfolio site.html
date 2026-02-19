@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anika | Cyber-Dev Portfolio</title>
+  <style>
+    /* --- Cyber Theme Variables --- */
+    :root {
+      --bg-color: #05080a;
+      --card-bg: rgba(10, 25, 30, 0.7);
+      --accent-color: #00f2ff; /* Cyber Cyan */
+      --text-color: #e0e0e0;
+      --border-glow: 0 0 10px rgba(0, 242, 255, 0.3);
+      --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --font-mono: 'Courier New', Courier, monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      /* This creates the "Digital Grid" background effect */
+      background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90px, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+      color: var(--text-color);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* --- Navbar --- */
+    header {
+      background: rgba(5, 8, 10, 0.9);
+      border-bottom: 1px solid var(--accent-color);
+      padding: 1rem 5%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: var(--accent-color);
+      font-family: var(--font-mono);
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+      text-shadow: var(--border-glow);
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content span {
+      color: var(--accent-color);
+      text-shadow: var(--border-glow);
+      font-family: var(--font-mono);
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+
+    /* --- Sections --- */
+    .section {
+      padding: 5rem 10%;
+    }
+
+    h2 {
+      font-family: var(--font-mono);
+      color: var(--accent-color);
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 15px;
+    }
+
+    /* --- Skills & Highlights Grid --- */
+    .skills-grid, .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill, .highlight {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 242, 255, 0.2);
+      border-radius: 4px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill:hover, .highlight:hover {
+      border-color: var(--accent-color);
+      box-shadow: var(--border-glow);
+      transform: translateY(-5px);
+    }
+
+    .highlight img {
+      width: 100%;
+      height: auto;
+      margin-top: 1rem;
+      border-radius: 2px;
+      filter: grayscale(50%) contrast(120%);
+    }
+
+    /* --- Contact Form --- */
+    form {
+      max-width: 600px;
+      background: var(--card-bg);
+      padding: 2rem;
+      border: 1px solid rgba(0, 242, 255, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-color);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid #333;
+      color: white;
+      border-radius: 4px;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+
+    .btn {
+      display: inline-block;
+      background: transparent;
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+      box-shadow: var(--border-glow);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      border-top: 1px solid #111;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#home" class="logo">> ANIKA_LOG</a>
+      <ul class="nav-links">
+        <li><a href="#about">// About</a></li>
+        <li><a href="#skills">// Skills</a></li>
+        <li><a href="#performance">// Highlights</a></li>
+        <li><a href="#contact">// Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm <span>Anika</span></h1>
+      <p>Front-End Developer | Security Analyst | Threat Researcher</p>
+      <br>
+      <a href="#contact" class="btn">Establish Connection</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>[01] How I Work</h2>
+    <p>Passionate about the intersection of code and cybersecurity, I thrive on building applications where security isn't an afterthought, but the foundation. I bridge the gap between intuitive design and impenetrable architecture.</p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>[02] Core Tech Stack</h2>
+    <div class="skills-grid">
+      <div class="skill">HTML5 / CSS3</div>
+      <div class="skill">JavaScript (ES6+)</div>
+      <div class="skill">Threat Detection</div>
+      <div class="skill">Network Security</div>
+      <div class="skill">Security Automation</div>
+    </div>
+  </section>
+
+  <section id="performance" class="section">
+    <h2>[03] Intelligence Briefings</h2>
+    <div class="highlights-grid">
+      <div class="highlight">
+        <h3>Network Defense</h3>
+        <img src="https://via.placeholder.com/300x200/0a191e/00f2ff?text=Security+Cert.jpg" alt="Network Defense Certificate">
+      </div>
+      <div class="highlight">
+        <h3>Cyber Analyst</h3>
+        <img src="https://via.placeholder.com/300x200/0a191e/00f2ff?text=Analyst+Path.jpg" alt="Cyber Security Analyst Path">
+      </div>
+      <div class="highlight">
+        <h3>Protocol Basics</h3>
+        <img src="https://via.placeholder.com/300x200/0a191e/00f2ff?text=Protocols.jpg" alt="Network Security Basics">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>[04] Send Encrypted Message</h2>
+    <form action="/transmit" method="POST">
+      <div class="form-group">
+        <label for="name">NAME_ENTRY</label>
+        <input type="text" id="name" name="name" placeholder="Who are you?" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="email">SECURE_EMAIL</label>
+        <input type="email" id="email" name="email" placeholder="example@secure.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">DATA_PACKET</label>
+        <textarea id="message" name="message" placeholder="Type your message here..." rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="btn">Transmit Data</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Anika // SYSTEM_ID: PORTFOLIO_V1</p>
+  </footer>
+</body>
+</html>
